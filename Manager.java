@@ -12,12 +12,19 @@ public class Manager {
 
     public void searchByName( String name )
     {
+        boolean found = false ; 
         for( Worker worker : list )
         {
             if( worker.getName().equalsIgnoreCase(name))
             {
                 System.out.println( worker.toString()) ; 
+                found = true ; 
             }
+        }
+
+        if( !found )
+        {
+            System.out.println( "Introuvable "); 
         }
     }
 
@@ -28,9 +35,28 @@ public class Manager {
 
     public void toAfficher()
     {
+        if (list.isEmpty()) {
+            System.out.println("Aucun travailleur.");
+            return;
+        }
+        
         for( Worker  worker : list )
         {
             System.out.println( worker.toString()) ; 
         }
+    }
+
+    public boolean modifierLeContact( int id , String newPhone )
+    {
+        for( Worker worker : list )
+        {
+            if( worker.getIdWorker() == id  )
+            {
+                worker.setPhone( newPhone ) ; 
+                return true ; 
+            }
+        }
+
+        return false ; 
     }
 }
