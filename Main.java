@@ -28,14 +28,14 @@ public class Main {
                 {
                     case 1 ->
                     {
-                        Worker worker = null ; 
+                        Worker worker = new Worker( "" ,"" , "") ; 
                         String name , phone , email ; 
                         System.out.println("L'information de travailleur "); 
-                        System.out.println("name :  "); 
+                        System.out.print("name :  "); 
                         worker.setName( sc.next() )  ; 
-                        System.out.println("name :  "); 
+                        System.out.print("Phone :  "); 
                         worker.setPhone( sc.next() )  ;
-                        System.out.println("name :  "); 
+                        System.out.println("Email :  "); 
                         worker.setEmail( sc.next() )  ; 
                         manager.addWorker(worker) ; 
                     } 
